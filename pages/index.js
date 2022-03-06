@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Button from "@material-ui/core/Button";
-import styles from "../styles/Home.module.css";
-import Image from "next/image";
+
 import Header from "../Components/Header";
 import Category from "../Components/Category";
 import Grids from "../Components/Grids";
@@ -22,6 +21,9 @@ export default function Home() {
         <Header />
         <Category />
         <Grids />
+      </div>
+      <div className="flex justify-center items-center">
+        Made with ❤️ by Akshay Deosthale 😃
       </div>
     </div>
   );

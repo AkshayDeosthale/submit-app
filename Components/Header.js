@@ -78,6 +78,7 @@ const Header = () => {
             <FormControlLabel
               control={<Switch defaultChecked />}
               label="Auto refresh"
+              className="flex  justify-center items-center "
             />
           </div>
         </div>

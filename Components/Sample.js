@@ -26,25 +26,6 @@ const Sample = ({ category, para1, para2, para3 }) => {
     setOpen(false);
   };
 
-  //   function handleListKeyDown(event) {
-  //     if (event.key === "Tab") {
-  //       event.preventDefault();
-  //       setOpen(false);
-  //     } else if (event.key === "Escape") {
-  //       setOpen(false);
-  //     }
-  //   }
-
-  // return focus to the button when we transitioned from !open -> open
-  //   const prevOpen = React.useRef(open);
-  //   React.useEffect(() => {
-  //     if (prevOpen.current === true && open === false) {
-  //       anchorRef.current.focus();
-  //     }
-
-  //     prevOpen.current = open;
-  //   }, [open]);
-
   return (
     <div>
       <Button

@@ -2,8 +2,6 @@ import React from "react";
 import Paper from "@mui/material/Paper";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 
 const Tasks = ({ items }) => {
   return (
@@ -19,17 +17,6 @@ const Tasks = ({ items }) => {
               button
               onClick={handleToggle(value)}
             >
-              {/* <ListItemIcon> */}
-              {/* <Checkbox
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{
-                    "aria-labelledby": labelId,
-                  }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`List item ${value + 1}`} /> */}
               <Box sx={{ width: "100%" }}>
                 <Grid
                   container
