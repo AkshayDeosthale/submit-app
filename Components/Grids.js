@@ -1,235 +1,324 @@
-import Paper from "@mui/material/Paper";
-import Grid from "@mui/material/Grid";
-import Box from "@mui/material/Box";
-
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Cards from "./Cards";
-
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
+import Paper from "@mui/material/Paper";
+import Stack from "@mui/material/Stack";
+import { styled } from "@mui/material/styles";
 
 import Button from "@mui/material/Button";
 
-function not(a, b) {
-  return a.filter((value) => b.indexOf(value) === -1);
-}
-
-function intersection(a, b) {
-  return a.filter((value) => b.indexOf(value) !== -1);
-}
-
 const Grids = () => {
-  const [checked, setChecked] = useState([]);
-  const [left, setLeft] = useState([0]);
-  const [right, setRight] = useState([4]);
+  // states to maintain Cards
 
-  const leftChecked = intersection(checked, left);
-  const rightChecked = intersection(checked, right);
+  //LHS
+  const [oneIndigo, setOneIndigo] = useState(false);
+  const [twoIndigo, setTwoIndigo] = useState(false);
 
-  const handleToggle = (value) => (e) => {
-    e.preventDefault();
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
+  const [oneRainbow, setOneRainbow] = useState(false);
+  const [twoRainbow, setTwoRainbow] = useState(false);
 
-    console.log(currentIndex);
+  const [oneClient, setOneClient] = useState(false);
+  const [twoClient, setTwoClient] = useState(false);
 
-    if (currentIndex === -1) {
-      newChecked.push(value);
+  const [oneSecondClient, setOneSecondClient] = useState(false);
+  const [twoSecondClient, setTwoSecondClient] = useState(false);
+
+  const [oneThirdClient, setOneThirdClient] = useState(false);
+  const [twoThirdClient, setTwoThirdClient] = useState(false);
+
+  //RHS
+  const [indigoExist, setIndigoExist] = useState(true);
+  const [rainbowExist, setRainbowExist] = useState(true);
+  const [clientOneExist, setClientOneExist] = useState(true);
+  const [clientTwoExist, setClientTwoExist] = useState(true);
+  const [clientThreeExist, setClientThreeExist] = useState(true);
+
+  //blanks
+  const [blankOne, setBlankOne] = useState(true);
+  const [blankTwo, setBlankTwo] = useState(true);
+
+  //functions for each RHS tab
+  const handlePinClickOnIndigo = () => {
+    if (blankOne == true) {
+      setOneIndigo(true);
+      setIndigoExist(false);
+      setBlankOne(false);
+    } else if (blankTwo == true) {
+      setTwoIndigo(true);
+      setIndigoExist(false);
+      setBlankTwo(false);
     } else {
-      newChecked.splice(currentIndex, 1);
+      console.log("No space availalable for indigo");
     }
-
-    setChecked(newChecked);
   };
 
-  const handleCheckedRight = () => {
-    setRight(right.concat(leftChecked));
-    setLeft(not(left, leftChecked));
-    setChecked(not(checked, leftChecked));
+  const handlePinClickOnRainbow = () => {
+    if (blankOne == true) {
+      setOneRainbow(true);
+      setRainbowExist(false);
+      setBlankOne(false);
+    } else if (blankTwo == true) {
+      setTwoRainbow(true);
+      setRainbowExist(false);
+      setBlankTwo(false);
+    } else {
+      console.log("No space availalable for rainbow");
+    }
   };
 
-  const handleCheckedLeft = () => {
-    setLeft(left.concat(rightChecked));
-    setRight(not(right, rightChecked));
-    setChecked(not(checked, rightChecked));
+  const handlePinClickOnClient = () => {
+    if (blankOne == true) {
+      setOneClient(true);
+      setClientOneExist(false);
+      setBlankOne(false);
+    } else if (blankTwo == true) {
+      setTwoClient(true);
+      setClientOneExist(false);
+      setBlankTwo(false);
+    } else {
+      console.log("No space availalable for rainbow");
+    }
   };
 
-  const customListLeft = (items) => (
-    <Paper sx={{ width: 300, height: 550, overflow: "auto" }} className="p-6">
-      <List dense component="div" role="list">
-        {items.map((value) => {
-          const labelId = `transfer-list-item-${value}-label`;
+  const handlePinClickOnClientSecond = () => {
+    if (blankOne == true) {
+      setOneSecondClient(true);
+      setClientTwoExist(false);
+      setBlankOne(false);
+    } else if (blankTwo == true) {
+      setTwoSecondClient(true);
+      setClientTwoExist(false);
+      setBlankTwo(false);
+    } else {
+      console.log("No space availalable for rainbow");
+    }
+  };
 
-          return (
-            <ListItem
-              key={value}
-              role="listitem"
-              button
-              onClick={handleToggle(value)}
-            >
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
-                  <Cards text="Client 1" transfer={handleCheckedRight} />
-                </Grid>
-              </Box>
-            </ListItem>
-          );
-        })}
-        <ListItem />
-      </List>
-    </Paper>
-  );
+  const handlePinClickOnClientThird = () => {
+    if (blankOne == true) {
+      setOneThirdClient(true);
+      setClientThreeExist(false);
+      setBlankOne(false);
+    } else if (blankTwo == true) {
+      setTwoThirdClient(true);
+      setClientThreeExist(false);
+      setBlankTwo(false);
+    } else {
+      console.log("No space availalable for rainbow");
+    }
+  };
 
-  const customListLeftTwo = (items) => (
-    <Paper sx={{ width: 300, height: 550, overflow: "auto" }} className="p-6">
-      <List dense component="div" role="list">
-        {items.map((value) => {
-          const labelId = `transfer-list-item-${value}-label`;
+  //function for eact LHS tab
 
-          return (
-            <ListItem
-              key={value}
-              role="listitem"
-              button
-              onClick={handleToggle(value)}
-            >
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
-                  <Cards text="Client 2" transfer={handleCheckedRight} />
-                </Grid>
-              </Box>
-            </ListItem>
-          );
-        })}
-        <ListItem />
-      </List>
-    </Paper>
-  );
+  const handlePinClickOnIndigoLeft = () => {
+    if (oneIndigo == true) {
+      setOneIndigo(false);
+      setIndigoExist(true);
+      setBlankOne(true);
+    } else {
+      setTwoIndigo(false);
+      setIndigoExist(true);
+      setBlankTwo(true);
+    }
+  };
 
-  const customListRight = (items) => (
-    <Paper sx={{ width: 300, height: 550, overflow: "auto" }} className="p-6">
-      <List dense component="div" role="list">
-        {items.map((value) => {
-          const labelId = `transfer-list-item-${value}-label`;
+  const handlePinClickOnRainbowLeft = () => {
+    if (oneRainbow == true) {
+      setOneRainbow(false);
+      setRainbowExist(true);
+      setBlankOne(true);
+    } else {
+      setTwoRainbow(false);
+      setRainbowExist(true);
+      setBlankTwo(true);
+    }
+  };
 
-          return (
-            <ListItem
-              key={value}
-              role="listitem"
-              button
-              onClick={handleToggle(value)}
-            >
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
-                  <Cards text="Rainbow" transfer={handleCheckedLeft} />
-                </Grid>
-              </Box>
-            </ListItem>
-          );
-        })}
-        <ListItem />
-      </List>
-    </Paper>
-  );
-  const customListRightTwo = (items) => (
-    <Paper sx={{ width: 300, height: 550, overflow: "auto" }} className="p-6">
-      <List dense component="div" role="list">
-        {items.map((value) => {
-          const labelId = `transfer-list-item-${value}-label`;
+  const handlePinClickOnClientLeft = () => {
+    console.log("client left");
+    if (oneClient == true) {
+      setOneClient(false);
+      setClientOneExist(true);
+      setBlankOne(true);
+    } else {
+      setTwoClient(false);
+      setClientOneExist(true);
+      setBlankTwo(true);
+    }
+  };
 
-          return (
-            <ListItem
-              key={value}
-              role="listitem"
-              button
-              onClick={handleToggle(value)}
-            >
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
-                  <Cards text="Indigo" transfer={handleCheckedLeft} />
-                </Grid>
-              </Box>
-            </ListItem>
-          );
-        })}
-        <ListItem />
-      </List>
-    </Paper>
-  );
-  const customListRightThree = (items) => (
-    <Paper sx={{ width: 300, height: 550, overflow: "auto" }} className="p-6">
-      <List dense component="div" role="list">
-        {items.map((value) => {
-          const labelId = `transfer-list-item-${value}-label`;
+  const handlePinClickOnClientLeftTwo = () => {
+    console.log("ClientSecond LHS");
+    if (oneSecondClient == true) {
+      setOneSecondClient(false);
+      setClientTwoExist(true);
+      setBlankOne(true);
+    } else {
+      setTwoSecondClient(false);
+      setClientTwoExist(true);
+      setBlankTwo(true);
+    }
+  };
+  const handlePinClickOnClientLeftThree = () => {
+    console.log("ClientThree LHS");
+    if (oneThirdClient == true) {
+      setOneThirdClient(false);
+      setClientThreeExist(true);
+      setBlankOne(true);
+    } else {
+      setTwoThirdClient(false);
+      setClientThreeExist(true);
+      setBlankTwo(true);
+    }
+  };
 
-          return (
-            <ListItem
-              key={value}
-              role="listitem"
-              button
-              onClick={handleToggle(value)}
-            >
-              <Box sx={{ width: "100%" }}>
-                <Grid
-                  container
-                  rowSpacing={1}
-                  columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-                >
-                  <Cards text="Indigo" transfer={handleCheckedLeft} />
-                </Grid>
-              </Box>
-            </ListItem>
-          );
-        })}
-        <ListItem />
-      </List>
-    </Paper>
-  );
+  // this for the cards
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "start",
+    color: theme.palette.text.secondary,
+  }));
+
+  //scroll Buttons
 
   return (
     <div className="h-auto">
-      <Grid container spacing={2} justifyContent="center" alignItems="center">
-        <Grid item>
-          <Grid item>{customListLeft(left)}</Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>{customListLeftTwo(left)}</Grid>
-        </Grid>
+      <div className="flex flex-row space-x-12 justify-between items-start right-10">
+        <div className="w-1/2">
+          <Stack direction="row" spacing={2}>
+            <Item className="p-0">
+              {oneIndigo && (
+                <Cards
+                  text="Indigo"
+                  handlePinClick={handlePinClickOnIndigoLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {oneRainbow && (
+                <Cards
+                  text="Rainbow"
+                  handlePinClick={handlePinClickOnRainbowLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {oneClient && (
+                <Cards
+                  text="Client 1"
+                  handlePinClick={handlePinClickOnClientLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {oneSecondClient && (
+                <Cards
+                  text="Client 2"
+                  handlePinClick={handlePinClickOnClientLeftTwo}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {oneThirdClient && (
+                <Cards
+                  text="Client 3"
+                  handlePinClick={handlePinClickOnClientLeftThree}
+                />
+              )}
+            </Item>
 
-        <Button sx={{ my: 0.5 }} variant="text" size="small">
-          &lt;
-        </Button>
+            {/* second place */}
 
-        <Grid item>
-          <Grid container direction="column" alignItems="center"></Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>{customListRight(right)}</Grid>
-        </Grid>
-        <Grid item>
-          <Grid item>{customListRightTwo(right)}</Grid>
-        </Grid>
-        <Grid item>{customListRightThree(right)}</Grid>
-        <Button sx={{ my: 0.5 }} variant="text" size="small">
-          &lt;
-        </Button>
-      </Grid>
+            <Item className="p-0">
+              {twoIndigo && (
+                <Cards
+                  text="Indigo"
+                  handlePinClick={handlePinClickOnIndigoLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {twoRainbow && (
+                <Cards
+                  text="Rainbow"
+                  handlePinClick={handlePinClickOnRainbowLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {twoClient && (
+                <Cards
+                  text="Client 1"
+                  handlePinClick={handlePinClickOnClientLeft}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {twoSecondClient && (
+                <Cards
+                  text="Client 2"
+                  handlePinClick={handlePinClickOnClientLeftTwo}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {twoThirdClient && (
+                <Cards
+                  text="Client 3"
+                  handlePinClick={handlePinClickOnClientLeftThree}
+                />
+              )}
+            </Item>
+          </Stack>
+        </div>
+
+        <Button>Back</Button>
+
+        {/* RHS */}
+        <div className="overflow-x-scroll w-1/2  ">
+          <Stack direction="row" spacing={2}>
+            <Item className="p-0">
+              {indigoExist && (
+                <Cards text="Indigo" handlePinClick={handlePinClickOnIndigo} />
+              )}
+            </Item>
+            <Item className="p-0">
+              {rainbowExist && (
+                <Cards
+                  text="Rainbow"
+                  handlePinClick={handlePinClickOnRainbow}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {clientOneExist && (
+                <Cards
+                  text="Client 1"
+                  handlePinClick={handlePinClickOnClient}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {clientTwoExist && (
+                <Cards
+                  text="Client 2"
+                  handlePinClick={handlePinClickOnClientSecond}
+                />
+              )}
+            </Item>
+            <Item className="p-0">
+              {clientThreeExist && (
+                <Cards
+                  text="Client 3"
+                  handlePinClick={handlePinClickOnClientThird}
+                />
+              )}
+            </Item>
+          </Stack>
+        </div>
+        <Button>Next</Button>
+      </div>
     </div>
   );
 };

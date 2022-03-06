@@ -22,7 +22,7 @@ export default function Home() {
         <Category />
         <Grids />
       </div>
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center ">
         Made with ❤️ by Akshay Deosthale 😃
       </div>
     </div>

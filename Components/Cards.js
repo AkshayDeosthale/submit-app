@@ -7,17 +7,17 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LinearProgress from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
 
-const Cards = ({ text, transfer }) => {
+const Cards = ({ text, handlePinClick }) => {
   return (
     <div>
-      <div className="flex items-center justify-between">
-        {text}
-        <button onClick={transfer}>
+      <div className="flex w-72 p-0 justify-between">
+        <span className="text-lg"> {text}</span>
+        <button onClick={handlePinClick}>
           <img src="/pinblue.svg" />
         </button>
       </div>
-      <div className="overflow-y-hidden">
-        <Accordion>
+      <div>
+        <Accordion className="p-0">
           <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
