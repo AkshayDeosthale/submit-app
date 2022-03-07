@@ -28,15 +28,24 @@ const Cards = ({ text, handlePinClick, pin, automated, event, manual }) => {
                   <div className="p-0 flex justify-between w-full space-x-8">
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Started</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-yellow-50">8</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">NotStarted</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">5</span>
+                        <span className="w-2/3 bg bg-yellow-50">10</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Completed</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-green-600">8</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -74,15 +83,24 @@ const Cards = ({ text, handlePinClick, pin, automated, event, manual }) => {
                   <div className="p-0 flex justify-between w-full space-x-8">
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Started</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-yellow-50">8</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">NotStarted</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">5</span>
+                        <span className="w-2/3 bg bg-yellow-50">10</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Completed</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-green-600">8</span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -119,15 +137,24 @@ const Cards = ({ text, handlePinClick, pin, automated, event, manual }) => {
                   <div className="p-0 flex justify-between w-full space-x-8 ">
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Started</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-yellow-50">8</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">NotStarted</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">5</span>
+                        <span className="w-2/3 bg bg-yellow-50">10</span>
+                      </div>
                     </div>
                     <div className="p-0 flex flex-col justify-center items-center">
                       <div className="p-0 text-sm">Completed</div>
-                      <div>Image</div>
+                      <div className="p-0 w-full flex flex-row rounded-2xl">
+                        <span className="w-1/3 bg bg-red-600">2</span>
+                        <span className="w-2/3 bg bg-green-600">8</span>
+                      </div>
                     </div>
                   </div>
                 </div>
