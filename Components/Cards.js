@@ -33,10 +33,17 @@ const Cards = ({ text, handlePinClick, pin }) => {
             </Typography>
           </AccordionSummary>
           <AccordionDetails>
-            <div>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress value={1} />
-              </Box>
+            <div className="flex flex-row p-0">
+              <div className="p-0">
+                <div>
+                  <span>Cash reacon with CP</span>
+                  <span>icon</span>
+                </div>
+                <div>
+                  <span>Breach installed</span>
+                  <span>time</span>
+                </div>
+              </div>
             </div>
           </AccordionDetails>
         </Accordion>
