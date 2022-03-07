@@ -51,6 +51,8 @@ const Grids = ({
   const [blankOne, setBlankOne] = useState(true);
   const [blankTwo, setBlankTwo] = useState(true);
 
+  const [pin, setPin] = useState(["/pinblue.svg", "/filledpinblue.svg"]);
+
   //from header toggles
 
   //functions for each RHS tab
@@ -209,6 +211,7 @@ const Grids = ({
                 <Cards
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -217,6 +220,7 @@ const Grids = ({
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -225,6 +229,7 @@ const Grids = ({
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -233,6 +238,7 @@ const Grids = ({
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -241,6 +247,7 @@ const Grids = ({
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -252,6 +259,7 @@ const Grids = ({
                 <Cards
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -260,6 +268,7 @@ const Grids = ({
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -268,6 +277,7 @@ const Grids = ({
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -276,6 +286,7 @@ const Grids = ({
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -284,6 +295,7 @@ const Grids = ({
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
+                  pin="/filledpinblue.svg"
                 />
               )}
             </Item>
@@ -297,7 +309,11 @@ const Grids = ({
           <Stack direction="row" spacing={2}>
             <Item className="p-0">
               {indigoExist && (
-                <Cards text="Indigo" handlePinClick={handlePinClickOnIndigo} />
+                <Cards
+                  text="Indigo"
+                  handlePinClick={handlePinClickOnIndigo}
+                  pin="/pinblue.svg"
+                />
               )}
             </Item>
             <Item className="p-0">
@@ -305,6 +321,7 @@ const Grids = ({
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbow}
+                  pin="/pinblue.svg"
                 />
               )}
             </Item>
@@ -313,6 +330,7 @@ const Grids = ({
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClient}
+                  pin="/pinblue.svg"
                 />
               )}
             </Item>
@@ -321,6 +339,7 @@ const Grids = ({
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientSecond}
+                  pin="/pinblue.svg"
                 />
               )}
             </Item>
@@ -329,6 +348,7 @@ const Grids = ({
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientThird}
+                  pin="/pinblue.svg"
                 />
               )}
             </Item>

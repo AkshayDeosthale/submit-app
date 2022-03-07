@@ -7,13 +7,13 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import LinearProgress from "@mui/material/LinearProgress";
 import Box from "@mui/material/Box";
 
-const Cards = ({ text, handlePinClick }) => {
+const Cards = ({ text, handlePinClick, pin }) => {
   return (
     <div>
       <div className="flex w-72 p-0 justify-between">
         <span className="text-lg"> {text}</span>
         <button onClick={handlePinClick}>
-          <img src="/pinblue.svg" />
+          <img src={pin} />
         </button>
       </div>
       <div>
