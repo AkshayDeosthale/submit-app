@@ -6,7 +6,29 @@ import { styled } from "@mui/material/styles";
 
 import Button from "@mui/material/Button";
 
-const Grids = () => {
+const Grids = ({
+  clientsIndigo,
+  clientsRainbow,
+  clientsClientOne,
+  clientsClientTwo,
+  clientsClientThree,
+  automated,
+  event,
+  manual,
+  procOne,
+  procTwo,
+  procThree,
+  indigoExist,
+  setIndigoExist,
+  rainbowExist,
+  setRainbowExist,
+  clientOneExist,
+  setClientOneExist,
+  clientTwoExist,
+  setClientTwoExist,
+  clientThreeExist,
+  setClientThreeExist,
+}) => {
   // states to maintain Cards
 
   //LHS
@@ -25,16 +47,11 @@ const Grids = () => {
   const [oneThirdClient, setOneThirdClient] = useState(false);
   const [twoThirdClient, setTwoThirdClient] = useState(false);
 
-  //RHS
-  const [indigoExist, setIndigoExist] = useState(true);
-  const [rainbowExist, setRainbowExist] = useState(true);
-  const [clientOneExist, setClientOneExist] = useState(true);
-  const [clientTwoExist, setClientTwoExist] = useState(true);
-  const [clientThreeExist, setClientThreeExist] = useState(true);
-
   //blanks
   const [blankOne, setBlankOne] = useState(true);
   const [blankTwo, setBlankTwo] = useState(true);
+
+  //from header toggles
 
   //functions for each RHS tab
   const handlePinClickOnIndigo = () => {

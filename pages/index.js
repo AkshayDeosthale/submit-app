@@ -4,8 +4,35 @@ import Button from "@material-ui/core/Button";
 import Header from "../Components/Header";
 import Category from "../Components/Category";
 import Grids from "../Components/Grids";
+import { useState } from "react";
 
 export default function Home() {
+  //states
+
+  //for clients
+  const [clientsIndigo, setClientsIndigo] = useState(true);
+  const [clientsRainbow, setClientsRainbow] = useState(true);
+  const [clientsClientOne, setClientsClientOne] = useState(true);
+  const [clientsClientTwo, setClientsClientTwo] = useState(true);
+  const [clientsClientThree, setClientsClientThree] = useState(true);
+
+  //for Tasks
+  const [automated, setAutomated] = useState(true);
+  const [event, setEvent] = useState(true);
+  const [manual, setManual] = useState(true);
+
+  //for proccess
+  const [procOne, setProcOne] = useState(true);
+  const [procTwo, setProcTwo] = useState(true);
+  const [procThree, setProcThree] = useState(true);
+
+  //RHS
+  const [indigoExist, setIndigoExist] = useState(true);
+  const [rainbowExist, setRainbowExist] = useState(true);
+  const [clientOneExist, setClientOneExist] = useState(true);
+  const [clientTwoExist, setClientTwoExist] = useState(true);
+  const [clientThreeExist, setClientThreeExist] = useState(true);
+
   return (
     <div>
       <Head>
@@ -18,12 +45,64 @@ export default function Home() {
         <Button variant="contained">
           <img src="/menublue.svg" />
         </Button>
-        <Header />
+        <Header
+          clientsIndigo={clientsIndigo}
+          setClientsIndigo={setClientsIndigo}
+          clientsRainbow={clientsRainbow}
+          setClientsRainbow={setClientsRainbow}
+          clientsClientOne={clientsClientOne}
+          setClientsClientOne={setClientsClientOne}
+          clientsClientTwo={clientsClientTwo}
+          setClientsClientTwo={setClientsClientTwo}
+          clientsClientThree={clientsClientThree}
+          setClientsClientThree={setClientsClientThree}
+          automated={automated}
+          setAutomated={setAutomated}
+          event={event}
+          setEvent={setEvent}
+          manual={manual}
+          setManual={setManual}
+          procOne={procOne}
+          setProcOne={setProcOne}
+          procTwo={procTwo}
+          setProcTwo={setProcTwo}
+          procThree={procThree}
+          setProcThree={setProcThree}
+          indigoExist={indigoExist}
+          setIndigoExist={setIndigoExist}
+          rainbowExist={rainbowExist}
+          setRainbowExist={setRainbowExist}
+          clientOneExist={clientOneExist}
+          setClientOneExist={setClientOneExist}
+          clientTwoExist={clientTwoExist}
+          setClientTwoExist={setClientTwoExist}
+          clientThreeExist={clientThreeExist}
+          setClientThreeExist={setClientThreeExist}
+        />
         <Category />
-        <Grids />
-      </div>
-      <div className="flex justify-center items-center ">
-        Made with ❤️ by Akshay Deosthale 😃
+        <Grids
+          clientsIndigo={clientsIndigo}
+          clientsRainbow={clientsRainbow}
+          clientsClientOne={clientsClientOne}
+          clientsClientTwo={clientsClientTwo}
+          clientsClientThree={clientsClientThree}
+          automated={automated}
+          event={event}
+          manual={manual}
+          procOne={procOne}
+          procTwo={procTwo}
+          procThree={procThree}
+          indigoExist={indigoExist}
+          setIndigoExist={setIndigoExist}
+          rainbowExist={rainbowExist}
+          setRainbowExist={setRainbowExist}
+          clientOneExist={clientOneExist}
+          setClientOneExist={setClientOneExist}
+          clientTwoExist={clientTwoExist}
+          setClientTwoExist={setClientTwoExist}
+          clientThreeExist={clientThreeExist}
+          setClientThreeExist={setClientThreeExist}
+        />
       </div>
     </div>
   );

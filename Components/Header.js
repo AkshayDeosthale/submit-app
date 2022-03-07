@@ -14,12 +14,40 @@ import Image from "next/image";
 
 import Sample from "./Sample";
 
-const Header = () => {
-  const current = new Date();
-  const date = `${current.getDate()}/${
-    current.getMonth() + 1
-  }/${current.getFullYear()}`;
-
+const Header = ({
+  clientsIndigo,
+  setClientsIndigo,
+  clientsRainbow,
+  setClientsRainbow,
+  clientsClientOne,
+  setClientsClientOne,
+  clientsClientTwo,
+  setClientsClientTwo,
+  clientsClientThree,
+  setClientsClientThree,
+  automated,
+  setAutomated,
+  event,
+  setEvent,
+  manual,
+  setManual,
+  procOne,
+  setProcOne,
+  procTwo,
+  setProcTwo,
+  procThree,
+  setProcThree,
+  indigoExist,
+  setIndigoExist,
+  rainbowExist,
+  setRainbowExist,
+  clientOneExist,
+  setClientOneExist,
+  clientTwoExist,
+  setClientTwoExist,
+  clientThreeExist,
+  setClientThreeExist,
+}) => {
   const [value, setValue] = useState(new Date());
   const [isDate, setIsDate] = useState(false);
 
@@ -28,11 +56,6 @@ const Header = () => {
     setIsDate(!isDate);
     console.log(isDate);
   };
-
-  //for navbars
-  const [client, setClient] = useState(false);
-  const [service, setService] = useState(false);
-  const [task, setTask] = useState(false);
 
   const handleClient = () => {
     setClient(!client);
@@ -60,7 +83,7 @@ const Header = () => {
             <div>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
-                  className="flex text-red-400"
+                  sx={{ flexDirection: "row-reverse" }}
                   views={["day"]}
                   label="Pick a date !"
                   value={value}
@@ -91,22 +114,120 @@ const Header = () => {
         <Paper elevation={4} className="p-2">
           <div className="flex flex-row space-x-24  ">
             <Sample
+              clientsIndigo={clientsIndigo}
+              setClientsIndigo={setClientsIndigo}
+              clientsRainbow={clientsRainbow}
+              setClientsRainbow={setClientsRainbow}
+              clientsClientOne={clientsClientOne}
+              setClientsClientOne={setClientsClientOne}
+              clientsClientTwo={clientsClientTwo}
+              setClientsClientTwo={setClientsClientTwo}
+              clientsClientThree={clientsClientThree}
+              setClientsClientThree={setClientsClientThree}
+              automated={automated}
+              setAutomated={setAutomated}
+              event={event}
+              setEvent={setEvent}
+              manual={manual}
+              setManual={setManual}
+              procOne={procOne}
+              setProcOne={setProcOne}
+              procTwo={procTwo}
+              setProcTwo={setProcTwo}
+              procThree={procThree}
+              indigoExist={indigoExist}
+              setIndigoExist={setIndigoExist}
+              rainbowExist={rainbowExist}
+              setRainbowExist={setRainbowExist}
+              clientOneExist={clientOneExist}
+              setClientOneExist={setClientOneExist}
+              clientTwoExist={clientTwoExist}
+              setClientTwoExist={setClientTwoExist}
+              clientThreeExist={clientThreeExist}
+              setClientThreeExist={setClientThreeExist}
+              setProcThree={setProcThree}
               category="clients"
-              para1="client 1"
-              para2="client 2"
-              para3="client 3"
+              para1="Indigo"
+              para2="Rainbow"
+              para3="Client 1"
+              para4="Client 2"
+              para5="Client 3"
             />
             <Sample
+              clientsIndigo={clientsIndigo}
+              setClientsIndigo={setClientsIndigo}
+              clientsRainbow={clientsRainbow}
+              setClientsRainbow={setClientsRainbow}
+              clientsClientOne={clientsClientOne}
+              setClientsClientOne={setClientsClientOne}
+              clientsClientTwo={clientsClientTwo}
+              setClientsClientTwo={setClientsClientTwo}
+              clientsClientThree={clientsClientThree}
+              setClientsClientThree={setClientsClientThree}
+              automated={automated}
+              setAutomated={setAutomated}
+              event={event}
+              setEvent={setEvent}
+              manual={manual}
+              setManual={setManual}
+              procOne={procOne}
+              setProcOne={setProcOne}
+              procTwo={procTwo}
+              setProcTwo={setProcTwo}
+              procThree={procThree}
+              indigoExist={indigoExist}
+              setIndigoExist={setIndigoExist}
+              rainbowExist={rainbowExist}
+              setRainbowExist={setRainbowExist}
+              clientOneExist={clientOneExist}
+              setClientOneExist={setClientOneExist}
+              clientTwoExist={clientTwoExist}
+              setClientTwoExist={setClientTwoExist}
+              clientThreeExist={clientThreeExist}
+              setClientThreeExist={setClientThreeExist}
+              setProcThree={setProcThree}
               category="service"
-              para1="proc 1"
-              para2="proc 2"
-              para3="proc 3"
+              para1="Process 1"
+              para2="Process 2"
+              para3="Process 3"
             />
             <Sample
-              category="button"
-              para1="automated"
-              para2="event based"
-              para3="manual"
+              clientsIndigo={clientsIndigo}
+              setClientsIndigo={setClientsIndigo}
+              clientsRainbow={clientsRainbow}
+              setClientsRainbow={setClientsRainbow}
+              clientsClientOne={clientsClientOne}
+              setClientsClientOne={setClientsClientOne}
+              clientsClientTwo={clientsClientTwo}
+              setClientsClientTwo={setClientsClientTwo}
+              clientsClientThree={clientsClientThree}
+              setClientsClientThree={setClientsClientThree}
+              automated={automated}
+              setAutomated={setAutomated}
+              event={event}
+              setEvent={setEvent}
+              manual={manual}
+              setManual={setManual}
+              procOne={procOne}
+              setProcOne={setProcOne}
+              procTwo={procTwo}
+              setProcTwo={setProcTwo}
+              procThree={procThree}
+              indigoExist={indigoExist}
+              setIndigoExist={setIndigoExist}
+              rainbowExist={rainbowExist}
+              setRainbowExist={setRainbowExist}
+              clientOneExist={clientOneExist}
+              setClientOneExist={setClientOneExist}
+              clientTwoExist={clientTwoExist}
+              setClientTwoExist={setClientTwoExist}
+              clientThreeExist={clientThreeExist}
+              setClientThreeExist={setClientThreeExist}
+              setProcThree={setProcThree}
+              category="Tasks"
+              para1="Automated"
+              para2="Event Based"
+              para3="Manual"
             />
             <div className="flex relative items-center">
               <input
