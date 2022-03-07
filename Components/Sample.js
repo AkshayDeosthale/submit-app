@@ -149,7 +149,7 @@ const Sample = ({
   };
 
   return (
-    <div>
+    <div className="z-20">
       <Button
         ref={anchorRef}
         id="composition-button"
@@ -171,12 +171,14 @@ const Sample = ({
         {({ TransitionProps, placement }) => (
           <Grow {...TransitionProps}>
             <Paper>
-              <MenuList className="flex flex-col w-32 space-y-2  items-start bg-white z-10">
+              <MenuList className="flex flex-col w-48 space-y-2  items-start bg-white z-10">
                 <MenuItem>
                   {checked && <Checkbox onClick={handleClickPosOne} checked />}
                   {checkedTwo && <Checkbox onClick={handleClickPosOne} />}
 
-                  {para1}
+                  <div className="border-l-4 pl-5 border-purple-600">
+                    {para1}
+                  </div>
                 </MenuItem>
 
                 <MenuItem>
@@ -184,7 +186,9 @@ const Sample = ({
                     <Checkbox onClick={handleClickPosTwo} checked />
                   )}
                   {checkedPosTwoTwo && <Checkbox onClick={handleClickPosTwo} />}
-                  {para2}
+                  <div className="border-l-4 pl-5 border-yellow-600">
+                    {para2}
+                  </div>
                 </MenuItem>
                 <MenuItem>
                   {checkedPosThree && (
@@ -193,7 +197,9 @@ const Sample = ({
                   {checkedPosThreeTwo && (
                     <Checkbox onClick={handleClickPosThree} />
                   )}
-                  {para3}
+                  <div className="border-l-4 pl-5 border-green-600">
+                    {para3}
+                  </div>
                 </MenuItem>
                 {para4 && (
                   <MenuItem>
@@ -203,7 +209,9 @@ const Sample = ({
                     {checkedPosFourTwo && (
                       <Checkbox onClick={handleClickPosFour} />
                     )}
-                    {para4}
+                    <div className="border-l-4 pl-5 border-blue-600">
+                      {para4}
+                    </div>
                   </MenuItem>
                 )}
                 {para5 && (
@@ -214,7 +222,9 @@ const Sample = ({
                     {checkedPosFiveTwo && (
                       <Checkbox onClick={handleClickPosFive} />
                     )}
-                    {para5}
+                    <div className="border-l-4 pl-5 border-red-600">
+                      {para5}
+                    </div>
                   </MenuItem>
                 )}
               </MenuList>

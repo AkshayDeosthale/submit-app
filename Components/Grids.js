@@ -13,8 +13,11 @@ const Grids = ({
   clientsClientTwo,
   clientsClientThree,
   automated,
+  setAutomated,
   event,
+  setEvent,
   manual,
+  setManual,
   procOne,
   procTwo,
   procThree,
@@ -52,6 +55,8 @@ const Grids = ({
   const [blankTwo, setBlankTwo] = useState(true);
 
   const [pin, setPin] = useState(["/pinblue.svg", "/filledpinblue.svg"]);
+
+  const ref = useRef(null);
 
   //from header toggles
 
@@ -212,6 +217,9 @@ const Grids = ({
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -221,6 +229,9 @@ const Grids = ({
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -230,6 +241,9 @@ const Grids = ({
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -239,6 +253,9 @@ const Grids = ({
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -248,6 +265,9 @@ const Grids = ({
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -260,6 +280,9 @@ const Grids = ({
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -269,6 +292,9 @@ const Grids = ({
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -278,6 +304,9 @@ const Grids = ({
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -287,6 +316,9 @@ const Grids = ({
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
@@ -296,16 +328,26 @@ const Grids = ({
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
                   pin="/filledpinblue.svg"
+                  automated={automated}
+                  event={event}
+                  manual={manual}
                 />
               )}
             </Item>
           </Stack>
         </div>
 
-        <Button>Back</Button>
+        <Button
+          onClick={() => {
+            console.log(ref.current.scrollLeft);
+            ref.current.scrollLeft -= 400;
+          }}
+        >
+          Back
+        </Button>
 
         {/* RHS */}
-        <div className="overflow-x-scroll w-1/2  ">
+        <div className="overflow-x-hidden w-1/2  " ref={ref}>
           <Stack direction="row" spacing={2}>
             <Item className="p-0">
               {indigoExist && (
@@ -354,7 +396,14 @@ const Grids = ({
             </Item>
           </Stack>
         </div>
-        <Button>Next</Button>
+        <Button
+          onClick={() => {
+            console.log(ref.current.scrollLeft);
+            ref.current.scrollLeft += 400;
+          }}
+        >
+          Next
+        </Button>
       </div>
     </div>
   );

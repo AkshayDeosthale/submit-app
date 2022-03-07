@@ -73,7 +73,7 @@ const Header = ({
   //navbars
 
   return (
-    <div>
+    <div className="z-20">
       <div>
         <div className="flex flex-row justify-between p-5 ">
           <div className="flex flex-row justify-between text-xl">
@@ -107,12 +107,13 @@ const Header = ({
         </div>
         <div>
           <Paper elevation={4} className="p-2">
-            Hi this is a description of the project , doubleclick to move Icon
+            Hi this is a description of the project , yet to learn to use redux.
+            The services can be filtered only when on the feft hand side tookit
           </Paper>
         </div>
 
         <Paper elevation={4} className="p-2">
-          <div className="flex flex-row space-x-24  ">
+          <div className="flex flex-row space-x-24  z-20">
             <Sample
               clientsIndigo={clientsIndigo}
               setClientsIndigo={setClientsIndigo}

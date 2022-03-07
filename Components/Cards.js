@@ -4,10 +4,8 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import LinearProgress from "@mui/material/LinearProgress";
-import Box from "@mui/material/Box";
 
-const Cards = ({ text, handlePinClick, pin }) => {
+const Cards = ({ text, handlePinClick, pin, automated, event, manual }) => {
   return (
     <div>
       <div className="flex w-72 p-0 justify-between">
@@ -17,82 +15,142 @@ const Cards = ({ text, handlePinClick, pin }) => {
         </button>
       </div>
       <div>
-        <Accordion className="p-0">
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel1a-content"
-            id="panel1a-header"
-          >
-            <Typography>
-              Accounting
-              <div>
-                <span className="text-sm">Started</span>
-                <span className="text-sm">NotStarted</span>
-                <span className="text-sm">Completed</span>
-              </div>
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div className="flex flex-row p-0">
-              <div className="p-0">
-                <div>
-                  <span>Cash reacon with CP</span>
-                  <span>icon</span>
+        {!automated && (
+          <Accordion className="p-0 border-l-4 pl-5 border-purple-600">
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel1a-content"
+              id="panel1a-header"
+            >
+              <Typography className="p-0  w-full">
+                <div className="p-0 space-y-5">
+                  <div className="p-0 font-bold">Accounting</div>
+                  <div className="p-0 flex justify-between w-full space-x-8">
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Started</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">NotStarted</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Completed</div>
+                      <div>Image</div>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <span>Breach installed</span>
-                  <span>time</span>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="p-0 w-400 flex flex-col items-start justify-start">
+              <div className="p-0 w-full">
+                <div className="p-0 w-full">
+                  <div className="flex justify-between w-full ">
+                    <span className="font-bold">Cash reacon with CP</span>
+                    <img src="/dot.svg" alt="dot" />
+                  </div>
+                  <div className="flex justify-between w-full ">
+                    <button className="bg-red-400 text-white p-2 rounded-md">
+                      Breach installed
+                    </button>
+
+                    <span>time</span>
+                  </div>
                 </div>
               </div>
-            </div>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
-            <Typography>
-              Reconsiliation
-              <div>
-                <span className="text-sm">Started</span>
-                <span className="text-sm">NotStarted</span>
-                <span className="text-sm">Completed</span>
+            </AccordionDetails>
+          </Accordion>
+        )}
+        {!event && (
+          <Accordion className="p-0 border-l-4 pl-5 border-yellow-600">
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography className="p-0  w-full">
+                <div className="p-0 space-y-5">
+                  <div className="p-0 font-bold">Reconciliation</div>
+                  <div className="p-0 flex justify-between w-full space-x-8">
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Started</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">NotStarted</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Completed</div>
+                      <div>Image</div>
+                    </div>
+                  </div>
+                </div>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="p-0 w-full flex flex-col items-start justify-start">
+              <div className="p-0 w-full">
+                <div className="p-0 w-full">
+                  <div className="flex justify-between w-full ">
+                    <span className="font-bold">Cash reacon with CP</span>
+                    <img src="/dot.svg" alt="dot" />
+                  </div>
+                  <div className="flex justify-between w-full ">
+                    <button className="bg-gray-400 text-black p-2 rounded-md">
+                      To be started
+                    </button>
+                    <span>time</span>
+                  </div>
+                </div>
               </div>
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress value={1} />
-              </Box>
-            </div>
-          </AccordionDetails>
-        </Accordion>
-        <Accordion>
-          <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
-            aria-controls="panel2a-content"
-            id="panel2a-header"
-          >
-            <Typography>
-              Finantial reporting
-              <div>
-                <span className="text-sm">Started</span>
-                <span className="text-sm">NotStarted</span>
-                <span className="text-sm">Completed</span>
+            </AccordionDetails>
+          </Accordion>
+        )}
+        {!manual && (
+          <Accordion className="p-0 border-l-4 pl-5 border-green-600">
+            <AccordionSummary
+              expandIcon={<ExpandMoreIcon />}
+              aria-controls="panel2a-content"
+              id="panel2a-header"
+            >
+              <Typography className="p-0  w-full">
+                <div className="p-0 space-y-5">
+                  <div className="p-0 font-bold">Financial reporting</div>
+                  <div className="p-0 flex justify-between w-full space-x-8 ">
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Started</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">NotStarted</div>
+                      <div>Image</div>
+                    </div>
+                    <div className="p-0 flex flex-col justify-center items-center">
+                      <div className="p-0 text-sm">Completed</div>
+                      <div>Image</div>
+                    </div>
+                  </div>
+                </div>
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails className="p-0  flex flex-col items-start justify-start">
+              <div className="p-0 w-full">
+                <div className="p-0 w-full">
+                  <div className="flex justify-between w-full ">
+                    <span className="font-bold">Cash reacon with CP</span>
+                    <img src="/dot.svg" alt="dot" />
+                  </div>
+                  <div className="flex justify-between w-full ">
+                    <button className="bg-gray-400 text-black p-2 rounded-md">
+                      To be started
+                    </button>
+                    <span>time</span>
+                  </div>
+                </div>
               </div>
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <div>
-              <Box sx={{ width: "100%" }}>
-                <LinearProgress value={1} />
-              </Box>
-            </div>
-          </AccordionDetails>
-        </Accordion>
+            </AccordionDetails>
+          </Accordion>
+        )}
       </div>
     </div>
   );

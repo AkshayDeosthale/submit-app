@@ -87,8 +87,11 @@ export default function Home() {
           clientsClientTwo={clientsClientTwo}
           clientsClientThree={clientsClientThree}
           automated={automated}
+          setAutomated={setAutomated}
           event={event}
+          setEvent={setEvent}
           manual={manual}
+          setManual={setManual}
           procOne={procOne}
           procTwo={procTwo}
           procThree={procThree}
