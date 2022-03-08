@@ -211,8 +211,8 @@ const Grids = ({
       <div className="flex flex-row space-x-12 justify-between items-start right-10">
         <div className="w-1/2">
           <Stack direction="row" spacing={2}>
-            <Item className="p-0">
-              {oneIndigo && (
+            {oneIndigo && (
+              <Item className="p-0">
                 <Cards
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
@@ -221,10 +221,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {oneRainbow && (
+              </Item>
+            )}
+
+            {oneRainbow && (
+              <Item className="p-0">
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
@@ -233,10 +234,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {oneClient && (
+              </Item>
+            )}
+
+            {oneClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
@@ -245,10 +247,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {oneSecondClient && (
+              </Item>
+            )}
+
+            {oneSecondClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
@@ -257,10 +260,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {oneThirdClient && (
+              </Item>
+            )}
+
+            {oneThirdClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
@@ -269,13 +273,13 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
+              </Item>
+            )}
 
             {/* second place */}
 
-            <Item className="p-0">
-              {twoIndigo && (
+            {twoIndigo && (
+              <Item className="p-0">
                 <Cards
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigoLeft}
@@ -284,10 +288,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {twoRainbow && (
+              </Item>
+            )}
+
+            {twoRainbow && (
+              <Item className="p-0">
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbowLeft}
@@ -296,10 +301,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {twoClient && (
+              </Item>
+            )}
+
+            {twoClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClientLeft}
@@ -308,10 +314,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {twoSecondClient && (
+              </Item>
+            )}
+
+            {twoSecondClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientLeftTwo}
@@ -320,10 +327,11 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {twoThirdClient && (
+              </Item>
+            )}
+
+            {twoThirdClient && (
+              <Item className="p-0">
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientLeftThree}
@@ -332,8 +340,8 @@ const Grids = ({
                   event={event}
                   manual={manual}
                 />
-              )}
-            </Item>
+              </Item>
+            )}
           </Stack>
         </div>
 
@@ -349,51 +357,55 @@ const Grids = ({
         {/* RHS */}
         <div className="overflow-x-hidden w-1/2  " ref={ref}>
           <Stack direction="row" spacing={2}>
-            <Item className="p-0">
-              {indigoExist && (
+            {indigoExist && (
+              <Item className="p-0">
                 <Cards
                   text="Indigo"
                   handlePinClick={handlePinClickOnIndigo}
                   pin="/pinblue.svg"
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {rainbowExist && (
+              </Item>
+            )}
+
+            {rainbowExist && (
+              <Item className="p-0">
                 <Cards
                   text="Rainbow"
                   handlePinClick={handlePinClickOnRainbow}
                   pin="/pinblue.svg"
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {clientOneExist && (
+              </Item>
+            )}
+
+            {clientOneExist && (
+              <Item className="p-0">
                 <Cards
                   text="Client 1"
                   handlePinClick={handlePinClickOnClient}
                   pin="/pinblue.svg"
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {clientTwoExist && (
+              </Item>
+            )}
+
+            {clientTwoExist && (
+              <Item className="p-0">
                 <Cards
                   text="Client 2"
                   handlePinClick={handlePinClickOnClientSecond}
                   pin="/pinblue.svg"
                 />
-              )}
-            </Item>
-            <Item className="p-0">
-              {clientThreeExist && (
+              </Item>
+            )}
+
+            {clientThreeExist && (
+              <Item className="p-0">
                 <Cards
                   text="Client 3"
                   handlePinClick={handlePinClickOnClientThird}
                   pin="/pinblue.svg"
                 />
-              )}
-            </Item>
+              </Item>
+            )}
           </Stack>
         </div>
         <Button
